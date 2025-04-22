@@ -1,0 +1,267 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+/* HEADER */
+header {
+  background-color: #f5f5f5;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #fab216;
+}
+
+/* Partie gauche du header (logo + menu) */
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Icône menu hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #f2bf05;
+  transition: transform 0.3s ease;
+}
+
+nav ul {
+  list-style: none;
+  gap: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  display: none;
+}
+nav ul.show {
+  display: flex;
+  max-height: 500px;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+nav a:hover {
+  color: #ffb10a;
+}
+
+/* HERO SECTION */
+.titreHome {
+  background: url('bricolage.jpg') center/cover no-repeat;
+  padding: 5rem 2rem;
+  text-align: center;
+
+  height: 70vh;               /* prend toute la hauteur de l'écran */
+  display: flex;               /* centrer le contenu */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titreHome h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fc9d03;
+  
+}
+.titreHome p {
+  font-size: 1.2rem;
+  color:#ffffff;
+}
+.titreHome button {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #fab216;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.titreHome button:hover {
+  background-color: #f2a007;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* FOOTER */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Mobile & tablette */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+  }
+
+  nav ul li {
+    padding: 0.5rem 1rem;
+  }
+
+  .titreHome {
+    padding: 3rem 1rem;
+  }
+
+  .titreHome h1 {
+    font-size: 2rem;
+  }
+
+  .titreHome p {
+    font-size: 1rem;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .titreHome h1 {
+    font-size: 1.6rem;
+  }
+
+  .titreHome p {
+    font-size: 0.95rem;
+  }
+
+  .titreHome button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  nav ul {
+    align-items: flex-start;
+  }
+}
+
+/* Desktop : rétablir nav normal */
+@media (min-width: 769px) {
+  nav ul {
+    display: flex !important;
+    max-height: none;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+
+.services {
+  padding: 4rem 2rem;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/*
+.service-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+*/
+
+.service-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.service-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.service-card p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+
+
+
+
+/*restyler le bouton*/
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bricoli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+<header>
+  <div class="left-header">
+    
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div>
+	<div class="logo">Bricoli</div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Produits</a></li>
+      <li><a href="#">Promotions</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- CONTENU PRINCIPAL -->
+  <main>
+    <section class="titreHome">
+      <h1>Besoin d'aide ?</h1>
+      <p>Trouvez un bricoleur proche de chez vous</p>
+      <button onclick="scrollToServices()">Trouver un bricoleur</button>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Bricole It. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!--
+  <section id="services" class="services">
+  <h2>Quel type de services recherchez-vous ?</h2>
+  <div class="services-grid">
+    <div class="service-card">🎨 Peinture</div>
+    <div class="service-card">💡 Électricité</div>
+    <div class="service-card">🚿 Plomberie</div>
+    <div class="service-card">🌿 Jardinage</div>
+    <div class="service-card">🧺 Électroménager</div>
+    <div class="service-card">🛠️ Bricolage maison</div>
+    <div class="service-card">🪑 Montage de meubles</div>
+    <div class="service-card">🔧 Homme à tout faire</div>
+  </div>
+</section>
+-->
+<section id="services" class="services">
+  <h2>Quel type de services recherchez-vous ?</h2>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="images/peinture.jpg" alt="Peinture">
+      <p>🎨Peinture</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/electricite.jpg" alt="Électricité">
+      <p>💡Électricité</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/plomberie.jpg" alt="Plomberie">
+      <p>🚿Plomberie</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/jardinage.jpg" alt="Jardinage">
+      <p>🌿Jardinage</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/electromenager.jpg" alt="Électroménager">
+      <p>🧺Électroménager</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/bricolage.jpg" alt="Bricolage maison">
+      <p>🛠️Bricolage maison</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/meuble.jpg" alt="Montage de meubles">
+      <p>🪑Montage de meubles</p>
+    </div>
+
+    <div class="service-card">
+      <img src="images/toutfaire.jpg" alt="Homme à tout faire">
+      <p>🔧Homme à tout faire</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+</body>
+</html>
