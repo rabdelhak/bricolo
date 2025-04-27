@@ -1,33 +1,17 @@
-function alertPromo() {
-  alert("Découvrez nos offres spéciales du mois !");
-}
-function toggleMenu() {
-  const navMenu = document.querySelector("nav ul");
-  const menuIcon = document.getElementById("menuToggle");
-
-  navMenu.classList.toggle("show");
-
-  // Change l'icône ☰ ↔ ✖
-  if (navMenu.classList.contains("show")) {
-    menuIcon.textContent = "✖";
-  } else {
-    menuIcon.textContent = "☰";
-  }
+function scrollToPart(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
-// Nouveau : reset du menu quand l’écran est large
-window.addEventListener("resize", () => {
-  const navMenu = document.querySelector("nav ul");
-  const menuIcon = document.getElementById("menuToggle");
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-  if (window.innerWidth > 768) {
-    navMenu.classList.remove("show");
-    menuIcon.textContent = "☰";
-  }
+// Afficher le bouton "Retour en haut" après un scroll
+window.addEventListener('scroll', () => {
+    const topButton = document.getElementById('topButton');
+    if (window.scrollY > 200) {
+        topButton.style.display = 'block';
+    } else {
+        topButton.style.display = 'none';
+    }
 });
-
-
-function scrollToServices() {
-  const servicesSection = document.getElementById("services");
-  servicesSection.scrollIntoView({ behavior: "smooth" });
-}
