@@ -1,73 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Animée</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome pour les icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>I Love Bricolo</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
+    <!-- HEADER -->
+    <header id="navbar">
+        <div class="navbar-left">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">BriCOLO</div>
+        </div>
+        <nav class="navbar-right">
+            <a href="#part1">Section 1</a>
+            <a href="#part2">Section 2</a>
+            <a href="#part3">Section 3</a>
+        </nav>
+        <div class="navbar-dropdown" id="dropdown">
+            <a href="#part1">Section 1x</a>
+            <a href="#part2">Section 2x</a>
+            <a href="#part3">Section 3x</a>
+        </div>
+    </header>
 
-<!-- Barre de navigation -->
-<nav id="navbar">
-    <!-- Menu Hamburger pour mobile -->
-    <div class="navbar-hamburger" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
+    <!-- SECTIONS -->
+    <section class="part1" id="part1">
+        <div class="content">
+            <h1 class="h1">Besoin d'aide ?</h1>
+			<h4 class="h4">Trouvez un bricoleur proche de chez vous</h4>
+            <button onclick="scrollToSection('part2')">Trouver un Bricolo</button>
+        </div>
+    </section>
 
-    <!-- Logo centré -->
-    <div class="logo">
-        <i class="fas fa-home"></i> BriCOLO
-    </div>
+    <section class="part2" id="part2">
+        <div class="content">
+            <h1>Bienvenue à la section 2</h1>
+            <button onclick="scrollToSection('part3')">Aller à Section 3</button>
+        </div>
+    </section>
 
-    <!-- Menu déroulant (pour mobile) -->
-    <div class="navbar-dropdown" id="navbarDropdown">
-        <a href="#part1">Accueil</a>
-        <a href="#part2">Services</a>
-        <a href="#part3">Contact</a>
-    </div>
+    <section class="part3" id="part3">
+        <div class="content">
+            <h1>Bienvenue à la section 3</h1>
+            <button onclick="scrollToSection('part1')">Retour à Section 1</button>
+        </div>
+    </section>
 
-    <!-- Menu normal -->
-    <div class="navbar-right">
-        <a href="#part1">Accueil</a>
-        <a href="#part2">Services</a>
-        <a href="#part3">Contact</a>
-    </div>
-</nav> 
-
-<!-- Sections de contenu -->
-<section class="part1" id="part1">
-    <div class="content">
-        Partie 1
-        <button onclick="scrollToPart('part2')">Aller à Partie 2</button>
-    </div>
-</section>
-
-<section class="part2" id="part2">
-    <div class="content">
-        Partie 2
-        <button onclick="scrollToPart('part3')">Aller à Partie 3</button>
-    </div>
-</section>
-
-<section class="part3" id="part3">
-    <div class="content">
-        Partie 3
-        <p>Fin de la page !</p>
-    </div>
-</section>
-
-<!-- Bouton Retour en Haut -->
-<button id="topButton" onclick="scrollToTop()">⬆️</button>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
