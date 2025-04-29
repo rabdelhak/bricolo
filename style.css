@@ -1,3 +1,4 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,81 +8,181 @@
 html, body {
     scroll-behavior: smooth;
     height: 100%;
-    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Hamburger menu */
+.hamburger {
+    width: 30px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+/*.hamburger.active span {
+  background: #f1c40f;
+}*/
+
+
+/* Hamburger transform en X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+	background: #f1c40f; /* Jaune lors de la transformation en X */
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+	background: #f1c40f; /* Jaune lors de la transformation en X */
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar-left {
+    margin-left: 20px;
+}
+/* Menu normal pour desktop */
+.navbar-right {
+    display: flex; /* Afficher les liens à droite sur desktop */
+    justify-content: flex-end;
+}
+.navbar-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+.navbar-right a:hover {
+    color: #f1c40f;
+}
+
+/* Règles générales (affichage desktop par défaut) */
+.navbar-hamburger {
+    display: none; /* Cacher l'icône hamburger sur desktop */
+}
+/* Menu hamburger visible uniquement sur mobile 
+.navbar-hamburger {
+    display: none;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 1.8rem;
+}*/
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/*.navbar-right {
+    display: flex;  Afficher le menu normal à droite (sur desktop) 
+}*/
+/* Liens de navigation (desktop) 
+.navbar-right {
+    margin-right: 20px;
+}*/
+
+
+
+
+
+.navbar-dropdown {
+    display: none; /* Cacher le menu déroulant par défaut (sur desktop) */
+}
+/* Menu déroulant (mobile) 
+.navbar-dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}*/
+
+.navbar-dropdown.show {
+    display: flex;
+    opacity: 1;
+}
+
+.navbar-dropdown a {
+    display: block;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+
+/* Animation d'apparition des liens avec délai en cascade */
+.navbar-dropdown.show a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-dropdown.show a:nth-child(1) { transition-delay: 0.1s; }
+.navbar-dropdown.show a:nth-child(2) { transition-delay: 0.2s; }
+.navbar-dropdown.show a:nth-child(3) { transition-delay: 0.3s; }
+
+.navbar-dropdown a:hover {
+    background-color: #f1c40f;
+}
+
+/* Sections principales */
 section {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: Arial, sans-serif;
     font-size: 2rem;
-    flex-direction: column;
-    overflow: hidden;
+    background: #2ecc71;
     position: relative;
 }
 
-.content {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s forwards;
-}
-
-/* Delay pour les sections */
-.part1 .content {
-    animation-delay: 0s;
-}
-.part2 .content {
-    animation-name: fadeInLeft;
-    animation-delay: 0.5s;
-}
-.part3 .content {
-    animation-name: fadeInRight;
-    animation-delay: 1s;
-}
-
-/* Animation montée */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animation gauche */
-@keyframes fadeInLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Animation droite */
-@keyframes fadeInRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Départ différent pour chaque animation */
-.part2 .content {
-    transform: translateX(-50px);
-}
-.part3 .content {
-    transform: translateX(50px);
-}
-
-/* Couleurs de section */
 .part1 {
     background: #3498db;
     color: white;
 }
 
 .part2 {
-    background: #2ecc71;
+    background: #f39c12;
     color: white;
 }
 
@@ -90,6 +191,59 @@ section {
     color: white;
 }
 
+/* Contenu animé */
+.content {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+/* Animations différentes par section */
+.part1 .content {
+    animation-delay: 0s;
+}
+
+.part2 .content {
+    animation-name: fadeInLeft;
+    animation-delay: 0.5s;
+}
+
+.part3 .content {
+    animation-name: fadeInRight;
+    animation-delay: 1s;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Boutons */
 button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -99,16 +253,15 @@ button {
     cursor: pointer;
     background: white;
     color: black;
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover sur bouton */
 button:hover {
     background: #f1c40f;
     transform: scale(1.1);
 }
 
-/* Bouton "Retour en haut" */
+/* Bouton retour en haut */
 #topButton {
     position: fixed;
     bottom: 20px;
@@ -122,7 +275,7 @@ button:hover {
     display: none;
     font-size: 1.5rem;
     z-index: 1000;
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 #topButton:hover {
@@ -130,20 +283,58 @@ button:hover {
     transform: scale(1.2);
 }
 
-/* Responsive (Mobile Friendly) */
+/* Responsive Design */
 @media (max-width: 768px) {
-    section {
+	.navbar-right {
+        display: none; /* Masquer les liens à droite sur mobile */
+    }
+	 /* Afficher l'icône hamburger et masquer le menu normal */
+    .navbar-hamburger {
+        display: block;
+        font-size: 2rem; /* Taille de l'icône */
+        cursor: pointer;
+        margin-left: 20px;
+    }
+	 /* Le menu déroulant (à activer via le JS) */
+    .navbar-dropdown {
+        display: none; /* Cacher le menu déroulant par défaut sur mobile */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+    }
+	/* Quand le menu est visible */
+    .navbar-dropdown.show {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+	
+	
+    #navbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar-hamburger {
+        display: block;
+        font-size: 2rem;
+    }
+
+    .logo {
         font-size: 1.5rem;
-        padding: 20px;
     }
 
-    button {
-        padding: 10px 15px;
-        font-size: 1rem;
+    .navbar-right {
+        display: none; /* Cacher le menu à droite (sur mobile) */
     }
 
-    #topButton {
-        padding: 10px;
-        font-size: 1.2rem;
+    .navbar-dropdown a {
+        font-size: 1.5rem;
+        padding: 15px;
     }
 }
