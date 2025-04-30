@@ -9,6 +9,7 @@ html, body {
     scroll-behavior: smooth;
     height: 100%;
     font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* ✅ Empêche tout débordement horizontal */
 }
 
 /* NAVBAR */
@@ -26,13 +27,11 @@ html, body {
     z-index: 1000;
 }
 
-/* Left: logo + hamburger */
 .navbar-left {
     display: flex;
     align-items: center;
 }
 
-/* Hamburger */
 .hamburger {
     width: 30px;
     height: 22px;
@@ -66,13 +65,17 @@ html, body {
     background: #f1c40f;
 }
 
-/* Logo */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-/* Nav desktop */
+.gradient-text {
+    background: linear-gradient(to right, #f1c40f, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .navbar-right {
     display: flex;
     gap: 20px;
@@ -89,7 +92,6 @@ html, body {
     color: #f1c40f;
 }
 
-/* Dropdown mobile */
 .navbar-dropdown {
     display: none;
     flex-direction: column;
@@ -116,12 +118,13 @@ html, body {
 .navbar-dropdown a:hover {
     background: #f1c40f;
 }
+
 /*____________________________________________*/
+.spacing {
+    margin-bottom: 10px;
+}
 
-
-/*_____________________________________________*/
-
-/* SECTION STYLES */
+/* SECTIONS */
 section {
     height: 100vh;
     display: flex;
@@ -129,9 +132,6 @@ section {
     align-items: center;
     text-align: center;
     font-size: 2rem;
-   /* padding-top: 80px;
-    position: relative;
-    flex-direction: column;*/
 }
 
 .part1 {
@@ -140,8 +140,11 @@ section {
 }
 
 .part2 {
+    padding: 4rem 2rem;
     background: linear-gradient(to right, #ff7e5f, #feb47b, #ffcc33);
     color: white;
+    text-align: center;
+    overflow: hidden; /* ✅ limite le débordement si jamais */
 }
 
 .part3 {
@@ -149,27 +152,12 @@ section {
     color: white;
 }
 
-/* Contenu animé <<< le contenu just qui va animer*/
 .content {
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/*.part1 .content {
-    animation-delay: 0s;
-}
-
-.part2 .content {
-    animation-name: fadeInLeft;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.2s ease-out forwards;
     animation-delay: 0.3s;
 }
-
-.part3 .content {
-    animation-name: fadeInRight;
-    animation-delay: 0.6s;
-}*/
 
 @keyframes fadeInUp {
     to {
@@ -221,7 +209,6 @@ button:hover {
     background: linear-gradient(to right, #f39c12, #e67e22);
 }
 
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .hamburger {
@@ -236,10 +223,67 @@ button:hover {
         text-align: center;
         width: 100%;
     }
-	.h4{
-		font-size: 1.2rem;
-	}
-	.h1{
-		color:#f5d018;
-	}
+
+    .h4 {
+        font-size: 1.2rem;
+    }
+
+    .h1 {
+        color: #f5d018;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .category-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .category-card p {
+        font-size: 1rem;
+    }
+}
+
+/* PARTIE 2 : CATEGORIES */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.category-card p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
