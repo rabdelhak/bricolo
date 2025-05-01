@@ -241,14 +241,27 @@ button:hover {
 	
   }
 
-    /* Très petits écrans */
+/* Très petits écrans */
 @media (max-width: 480px) {
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* moins large */
+    gap: 1rem; /* un peu moins d'espace entre les cartes */
+  }
+
+  .category-card {
+    padding: 0.8rem; /* réduit le padding */
+  }
+
+  .category-card img {
+    width: 80px;
+    height: 80px; /* images plus petites */
+  }
+
+  .category-card p {
+    font-size: 1rem; /* texte un peu plus petit */
+  }
 }
-}
+
 
 @media (min-width: 769px) { /*769px et plus, donc aux écrans desktop.*/
   /*.navbar-right { peut on ajouter des elements en droit 
