@@ -9,7 +9,7 @@ html, body {
     scroll-behavior: smooth;
     height: 100%;
     font-family: 'Arial', sans-serif;
-    overflow-x: hidden; /* ✅ Empêche tout débordement horizontal */
+    /* overflow-x: hidden; ✅ Empêche tout débordement horizontal */
 }
 
 /* NAVBAR */
@@ -126,28 +126,31 @@ html, body {
 
 /* SECTIONS */
 section {
-    height: 100vh;
-    display: flex;
+     /* prend toute la hauteur de l'écran */
+    
+    
     justify-content: center;
     align-items: center;
-    text-align: center;
+	text-align: center;
     font-size: 2rem;
 }
 
-.part1 {
-    background: linear-gradient(to right, #3498db, #9b59b6);
+.part1 {display: flex; /* centrer le contenu */
+	height: 100vh;
+    background: linear-gradient(to right, #3498db, #9b59b6);background: url('bricolage.jpg') center/cover no-repeat;
     color: white;
 }
 
-.part2 {
+/* .part2 {height: 135vh;
     padding: 4rem 2rem;
     background: linear-gradient(to right, #ff7e5f, #feb47b, #ffcc33);
     color: white;
     text-align: center;
-    overflow: hidden; /* ✅ limite le débordement si jamais */
-}
+    overflow: hidden; ✅ limite le débordement si jamais 
+}*/
 
-.part3 {
+.part3 {display: flex;
+	height: 100vh;
     background: #9b59b6;
     color: white;
 }
@@ -231,8 +234,13 @@ button:hover {
     .h1 {
         color: #f5d018;
     }
+	.navbar-dropdown{
+ 
+	}
 
-    .category-grid {
+	
+  }
+	/*.category-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
 
@@ -243,11 +251,18 @@ button:hover {
 
     .category-card p {
         font-size: 1rem;
-    }
+    }*/
+    
+}
+@media (min-width: 769px) { /*769px et plus, donc aux écrans desktop.*/
+  /*.navbar-right { peut on ajouter des elements en droit 
+        display: none;
+    }*/
+ 
 }
 
 /* PARTIE 2 : CATEGORIES */
-.category-grid {
+/*.category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
@@ -256,8 +271,28 @@ button:hover {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .category-card {
     background: white;
     border-radius: 10px;
@@ -286,4 +321,73 @@ button:hover {
 .category-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/*----tst gride----
+.category-grid{
+	display:grid;
+	grid-template-columns:repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap:15px;
+	
+}-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+.part2 {  justify-content: center;
+    align-items: center;text-align: center;
+	
+  padding: 4rem 2rem;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+.part2 h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.category-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.category-card p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
 }
