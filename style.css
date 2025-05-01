@@ -240,20 +240,16 @@ button:hover {
 
 	
   }
-	/*.category-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
 
-    .category-card img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .category-card p {
-        font-size: 1rem;
-    }*/
-    
+    /* Très petits écrans */
+@media (max-width: 480px) {
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
 }
+}
+
 @media (min-width: 769px) { /*769px et plus, donc aux écrans desktop.*/
   /*.navbar-right { peut on ajouter des elements en droit 
         display: none;
@@ -272,24 +268,6 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
 }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
@@ -330,18 +308,6 @@ button:hover {
 	gap:15px;
 	
 }-*/
-
-
-
-
-
-
-
-
-
-
-
-
 
 .part2 {  justify-content: center;
     align-items: center;text-align: center;
