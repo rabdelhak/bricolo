@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I Love Bricolo</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- HEADER -->
     <header id="navbar">
         <div class="navbar-left">
@@ -16,7 +15,7 @@
                 <span></span>
                 <span></span>
             </div>
-          <div class="logo">Bri<span class="gradient-text">COLO</span></div>
+            <div class="logo">Bri<span class="gradient-text">COLO</span></div>
         </div>
         <nav class="navbar-right">
             <a href="#part1">Section 1</a>
@@ -24,9 +23,9 @@
             <a href="#part3">Section 3</a>
         </nav>
         <div class="navbar-dropdown" id="dropdown">
-            <a href="#part1">Section 1x</a>
-            <a href="#part2">Section 2x</a>
-            <a href="#part3">Section 3x</a>
+            <a href="#part1">Section 1</a>
+            <a href="#part2">Section 2</a>
+            <a href="#part3">Section 3</a>
         </div>
     </header>
 
@@ -34,64 +33,47 @@
     <section class="part1" id="part1">
         <div class="content">
             <h1 class="h1 spacing gradient-text">Besoin d'aide ?</h1>
-			<h4 class="h4 spacing">Trouvez un bricoleur proche de chez vous</h4>
+            <h4 class="h4 spacing">Trouvez un bricoleur proche de chez vous</h4>
             <button onclick="scrollToSection('part2')">Trouver un Bricolo</button>
         </div>
     </section>
-<!--début partie 2 de choix metier  -->
-    <section class="part2" id="part2">
-  <div class="content">
-    <h2>Nos Catégories</h2>
-    <div class="category-grid">
-	
-      <div class="category-card">
-        <img src="img/bricolage.jpg" alt="Outils">
-        <p>🛠️ maison</p>
-      </div>
-      <div class="category-card">
-        <img src="img/electricite.jpg" alt="Électricité">
-        <p>💡Électricité</p>
-      </div>
-      <div class="category-card">
-        <img src="img/plomberie.jpg" alt="Plomberie">
-        <p>🚿Plomberie</p>
-      </div>
-	  <div class="category-card">
-        <img src="img/peinture.jpg" alt="Plomberie">
-        <p>🎨Peinture</p>
-      </div>
-	  <div class="category-card">
-        <img src="img/peinture.jpg" alt="Plomberie">
-        <p>🎨Peinture1</p>
-      </div>
-	  <div class="category-card">
-        <img src="img/peinture.jpg" alt="Plomberie">
-        <p>🎨Peinture2</p>
-      </div>
-	  <div class="category-card">
-        <img src="img/peinture.jpg" alt="Plomberie">
-        <p>🎨Peinture3</p>
-      </div>
-	  	  <div class="category-card">
-        <img src="img/peinture.jpg" alt="Plomberie">
-        <p>🎨Peinture4</p>
-      </div>
-	  
-	    <div class="content">
-            <h1>Nous!!</h1>
-            <button onclick="scrollToSection('part3')">Contacter nous!</button>
-        </div>
-		
-      <!-- Ajoute autant de cartes que tu veux -->
-    </div>
-  </div>
-</section>
 
-<!--fin partie 2 de choix metier  -->
+    <!-- PARTIE 2 : CATÉGORIES -->
+    <section class="part2" id="part2">
+        <div class="content">
+            <h2>Nos Catégories</h2>
+        </div>
+
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="img/bricolage.jpg" alt="Bricolage">
+                <p>🛠️ Maison</p>
+            </div>
+            <div class="category-card">
+                <img src="img/electricite.jpg" alt="Électricité">
+                <p>💡 Électricité</p>
+            </div>
+            <div class="category-card">
+                <img src="img/plomberie.jpg" alt="Plomberie">
+                <p>🚿 Plomberie</p>
+            </div>
+            <div class="category-card">
+                <img src="img/peinture.jpg" alt="Peinture">
+                <p>🎨 Peinture</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1 class="tst_nous">Nous!!</h1>
+            <button onclick="scrollToSection('part3')">Nous contacter</button>
+        </div>
+    </section>
+
+    <!-- PARTIE 3 -->
     <section class="part3" id="part3">
         <div class="content">
-            <h1>Bienvenue à la section 3</h1>
-            <button onclick="scrollToSection('part1')">Trouvez ton Bricoleur</button>
+            <h1>Contactez-nous</h1>
+            <button onclick="scrollToSection('part1')">Retour à l'accueil</button>
         </div>
     </section>
 
