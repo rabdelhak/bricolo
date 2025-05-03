@@ -18,6 +18,7 @@
             <div class="logo">Bri<span class="gradient-text">COLO</span></div>
         </div>
         <nav class="navbar-right">
+			<!--<a href="login.html" class="login-button">Me connecter</a>-->
             <a href="#part1">Section 1</a>
             <a href="#part2">Section 2</a>
             <a href="#part3">Section 3</a>
@@ -27,6 +28,13 @@
             <a href="#part2">Section 2</a>
             <a href="#part3">Section 3</a>
         </div>
+		
+		<!-- Bouton pour ouvrir la modale -->
+<button class="login-btn" onclick="openLoginModal()">🔒 Me connecter</button>
+
+
+
+
     </header>
 
     <!-- SECTIONS -->
@@ -36,6 +44,41 @@
             <h4 class="h4 spacing">Trouvez un bricoleur proche de chez vous</h4>
             <button onclick="scrollToSection('part2')">Trouver un Bricolo</button>
         </div>
+		
+		
+		
+		
+		<!-- Fenêtre modale cachée -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+		<button class="facebook-btn">
+		<img src="https://www.svgrepo.com/show/157810/facebook.svg" alt="Facebook" />
+		Se connecter avec Facebook
+		</button>
+<hr class="separator">
+
+    <span class="close" onclick="closeLoginModal()">&times;</span>
+    <h2>Connexion</h2>
+    <form action="/login" method="post">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+	  <a href="#">Mot de passe oublié ?</a>
+<hr class="separator">
+
+	  <h5> Vous n'avez pas de compte ?<span class="gradient-text"> Inscription</span></h5>
+    </form>
+  </div>
+</div>
+<!--btn cache log-->
+<script>
+ 
+</script>
+		
+		
+		
+		
+		
     </section>
 
     <!-- PARTIE 2 : CATÉGORIES -->
