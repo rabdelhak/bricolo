@@ -57,3 +57,8 @@ document.querySelectorAll(".navbar-dropdown a").forEach(link => {
 
 
 
+function showForm(formId){
+	document.querySelectorAll(".modal-content").forEach(form=>form.classList.remove("active"));
+	document.getElementById(formId).classList.add("active");
+	
+}
